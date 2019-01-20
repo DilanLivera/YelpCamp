@@ -1,0 +1,33 @@
+<!-- add header page -->
+<% include ../partials/header %>
+<div class = "container">
+    <!-- page header -->
+    <header class = "jumbotron">
+        <div class = "container">
+            <h1>Welcome To YelpCamp</h1>
+            <p>View our hand-picked campgrounds from all over Australia.</p>
+            <p>
+                <!-- to add new campgrounds -->
+                <a class ="btn btn-primary btn-lg " href = "/campgrounds/new">Add New Campground</a>
+            </p>
+        </div>
+    </header>
+
+    <div class = "row text-center" style = "display: flex; flex-wrap: wrap;">
+        <!-- show campgrounds from array -->
+        <% campgrounds.forEach((campground) => { %>
+            <div class = "col-md-3 col-sm-6">
+                <div class = "thumbnail">
+                    <image src = "<%= campground.image %>"></image>
+                    <div class = "caption">
+                        <h4><%= campground.name %></h4>
+                    </div>
+                    <!-- to show more info about single campground -->
+                    <a href = "/campgrounds/<%= campground._id %>" class = "btn btn-primary">More Info</a>
+                </div>
+            </div>                
+        <% }); %>
+    </div>
+</div>
+<!-- add footer page -->
+<% include ../partials/footer %>
