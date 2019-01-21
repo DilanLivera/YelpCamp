@@ -16,7 +16,8 @@ const commentRoutes    = require("./routes/comments"),
       
 app.set("view engine", "ejs");
 app.use(bodyparser.urlencoded({extended: true}));
-mongoose.connect("mongodb://localhost:27017/yelp_camp", { useNewUrlParser: true });
+//mongoose.connect("mongodb://localhost:27017/yelp_camp", { useNewUrlParser: true });
+mongoose.connect("mongodb://Dilan:wishgiftcard0096234019@ds064748.mlab.com:64748/yelpcamp", { useNewUrlParser: true });
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash()); //needs to come before passport configuration
