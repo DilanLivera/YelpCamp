@@ -25,13 +25,14 @@ router.post("/", middlewear.isLoggedIn, (req, res) => {
     //get name, image url and description form and add campgrounds and sanitize
     const name        = req.sanitize(req.body.name),
           imageURL    = req.sanitize(req.body.image),
+          cost        = req.sanitize(req.body.cost),
           description = req.sanitize(req.body.description),
           author      = {
                             id: req.user._id,
                             username: req.user.username
                         }
           
-    let newCampground = { name: name, image: imageURL, description: description, author: author };
+    let newCampground = { name: name, image: imageURL, cost: cost, description: description, author: author };
     
     //add new campground to the database
     Campground.create(newCampground, (err, returnedCampground) => {
@@ -84,6 +85,7 @@ router.put("/:id", middlewear.checkCampgroundOwnership, (req, res) => {
     //sanitize the campground
     req.body.campground.name = req.sanitize(req.body.campground.name);
     req.body.campground.image = req.sanitize(req.body.campground.image);
+    req.body.campground.cost = req.sanitize(req.body.campground.cost);
     req.body.campground.description = req.sanitize(req.body.campground.description);
     
     //find the campground from the collection and update

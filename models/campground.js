@@ -5,19 +5,20 @@ const campgroundSchema = new mongoose.Schema({
     name: String,
     image: String,
     description: String,
+    cost: Number,
     comments: [
             {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: "Comment"
             }
         ],
-        author:{
-                id: {
-                        type: mongoose.Schema.Types.ObjectId,
-                        ref: "User"
-                },
-                username: String
-        }        
+    author:{
+            id: {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: "User"
+            },
+            username: String
+    }        
 });
 
 //compile schema in to a model
