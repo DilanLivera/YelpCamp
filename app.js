@@ -25,6 +25,7 @@ mongoose.connect(URL, {useNewUrlParser: true});
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash()); //needs to come before passport configuration
+app.locals.moment = require('moment');
 
 //configure passport
 app.use(require("express-session")({

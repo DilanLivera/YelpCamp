@@ -22,7 +22,7 @@
                 <h5><a><%= campground.name %></a></h5>
                 <p><%- campground.description %></p>
                 <p>
-                    Submitted by <em><%= campground.author.username %></em>
+                    Submitted by <em><%= campground.author.username %>, <%= moment(campground.createdAt).fromNow() %></em>
                 </p>
                 <diV class = "text-right">
                     <a class = "btn btn-xs btn-default" href = "/campgrounds">Go Back</a>
@@ -46,7 +46,7 @@
                     <div class = "row">
                         <div class = "col-md-12">
                             <strong><%= comment.author.username %></strong>
-                            <span class = "pull-right">10 days ago</span>
+                            <span class = "pull-right"><%= moment(comment.createdAt).fromNow() %></span>
                             <p>
                                 <%= comment.text %>
                             </p>
