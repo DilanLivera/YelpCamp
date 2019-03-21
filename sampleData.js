@@ -2,7 +2,8 @@ let campgrounds = [
         {
             name: "Morgan Conservation Park", 
             image: "https://images.unsplash.com/photo-1525811902-f2342640856e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80",
-            description: "There are so many places to camp along the River Murray, and each one provides a different aspect to this waterway. Morgan Conservation Park is no exception. Located around 150km from Adelaide, this Park run by National Parks SA is a great place for a weekend away without having to travel too far."
+            description: "There are so many places to camp along the River Murray, and each one provides a different aspect to this waterway. Morgan Conservation Park is no exception. Located around 150km from Adelaide, this Park run by National Parks SA is a great place for a weekend away without having to travel too far.",
+            Address: "Morgan-Cadell Rd, Morgan SA 5320"            
         },
         {
             name: "Western KI Caravan Park", 
